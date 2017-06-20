@@ -4,14 +4,21 @@ import {
   Route,
 } from 'react-router-dom';
 
+import Header from '../../Components/Shared/Header/Header';
+
 import Home from './Home/Home';
+import PokeDetail from './Detail/Detail';
 
 function Page() {
   return(
     <section>
+      <Header />
       <Router>
-         <Route exact path="/" component={Home}/>
-       </Router>
+        <div>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/pokemon/:id" component={PokeDetail} />
+        </div>
+      </Router>
     </section>
   );
 }

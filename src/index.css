@@ -1,0 +1,42 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Styles Pagination */
+.container-pagination {
+  padding: 1em;
+  text-align: center;
+}
+
+.container-pagination > .pagination {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.pagination > li {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.pagination > li:first-child {
+  margin-left: 0;
+}
+
+.pagination > li > a {
+  background: #EF5350;
+  padding: .8em 1em;
+  display: inline-block;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.pagination > .active > a {
+  background: #263238;
+  color: #FFF;
+}
+
+.pagination > .disabled > a {
+  background: #DDD;
+  color: #000;
+}

@@ -10,7 +10,7 @@ class Home extends Component {
 
   constructor() {
     super();
-
+    //Definimos el estado inicial del componente
     this.state = {
       pokemons: [],
       page: 1,
@@ -23,6 +23,7 @@ class Home extends Component {
     this.initialFetch();
   }
 
+  /* función de petición a la API */
   async initialFetch() {
     const pokemons = await api.pokemons.ListPokemons();
     this.setState({
@@ -31,6 +32,7 @@ class Home extends Component {
     })
   }
 
+  /* Función para cambiar el estado para el paginado*/
   handlePageChange(newpage) {
     this.setState({ page: newpage })
   }
@@ -43,7 +45,7 @@ class Home extends Component {
       );
     }
 
-    const limit = 5;
+    const limit = 30;
     const secundary = this.state.page * limit;
     const initial = secundary - limit
     const pokemons = this.state.pokemons.objects.slice(initial, secundary);
@@ -59,12 +61,15 @@ class Home extends Component {
           })
         }
 
-        <Pagination
-          activePage={this.state.page}
-          itemsCountPerPage={limit}
-          totalItemsCount={this.state.pokemons.objects.length}
-          onChange={this.handlePageChange}
-        />
+        <div className="container-pagination">
+          <Pagination
+            activePage={this.state.page}
+            itemsCountPerPage={limit}
+            totalItemsCount={this.state.pokemons.objects.length}
+            onChange={this.handlePageChange}
+          />
+        </div>
+
       </div>
     );
   }
