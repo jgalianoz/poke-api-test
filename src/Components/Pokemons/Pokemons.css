@@ -1,0 +1,28 @@
+.container-pokemons {
+  max-width: 1024px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+.Pokemon {
+  text-align: center;
+  display: inline-block;
+  width: 280px;
+  padding: .5em;
+  margin: 0 20px 20px;
+  background: #DDD;
+}
+
+.Pokemon:nth-child(3n) {
+  margin-right: 0;
+}
+
+.Pokemon-avatar {
+  padding: 0;
+  margin: 0;
+}
+
+.Pokemon-info > h3 {
+  padding: 0;
+  margin: 0;
+}
