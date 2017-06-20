@@ -1,0 +1,62 @@
+.container-detail {
+  padding: 1em;
+  max-width: 1024px;
+  margin: 20px auto 0;
+}
+
+.container-detail-datos {
+  text-align: center;
+}
+
+.item {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.item > span {
+  font-size: 1.3em;
+}
+
+.detail-title {
+  font-weight: 300;
+  text-decoration: underline;
+  font-size: 1.5em
+}
+
+.detailt-caracteristicas-hab {
+  border-top: 1px solid #DDD;
+  margin-top: 10px;
+}
+
+.detailt-caracteristicas-hab > li {
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 1.5em;
+}
+
+.title-hab {
+  margin: 20px 0;
+  font-size: 1.5em;
+  font-weight: 300;
+  text-decoration: underline;
+}
+
+.acess {
+  color: #263238;
+  font-size: 2em;
+}
+
+.star {
+  color: #b5b509;
+}
+
+.previus {
+  display: block;
+  padding: .8em 1em;
+  text-decoration: none;
+  color: #FFF;
+  background: #EF5350;
+  width: 200px;
+  margin: 120px auto 0;
+  cursor: pointer;
+}

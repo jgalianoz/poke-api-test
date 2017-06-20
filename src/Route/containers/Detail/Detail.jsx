@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './Detail.css';
+
 import api from '../../../utils/api.js';
 
 class Detail extends Component {
@@ -8,26 +10,73 @@ class Detail extends Component {
     super();
     this.state = {
       pokemon: {},
+      description: '',
       loading: true,
     };
   }
 
-  componenteDidMount() {
+  componentDidMount() {
     this.initialFetch();
   }
-
+  /* Función para hacer la petición a la API para obtener los detalles de los pokemones */
   async initialFetch() {
-    const pokemon = await api.pokemons.SinglePokemons(this.props.match.params.id);
+    const [
+      pokemon,
+      description,
+    ] = await Promise.all([
+      api.pokemons.SinglePokemons(this.props.match.params.id),
+      api.pokemons.PokemonsDescription(this.props.match.params.id),
+    ])
     this.setState({
       pokemon,
+      description,
       loading: false,
     })
+    console.log(this.state.pokemon);
   }
 
   render(){
-    console.log(this.state.pokemon);
+
+    if ( this.state.loading ) return <p>Cargando....</p>
+
     return(
-      <h1>Detalles u/o perfil</h1>
+      <section className="container-detail">
+        <h2>Detail / {this.state.pokemon.name}</h2>
+
+        <div className="container-detail-datos">
+          <img src="/images/pokemon.png" width="200" alt="pokemon" />
+          <h3 className="detail-title">{ this.state.pokemon.name }</h3>
+          <p>{this.state.description.description}</p>
+
+          <div className="detailt-caracteristicas">
+            <div className="item detailt-caracteristicas-weight">
+              <i className="material-icons acess">accessibility</i>
+              <span>{this.state.pokemon.weight} weight</span>
+            </div>
+
+            <div className="item detailt-caracteristicas-exp">
+              <i className="material-icons star">stars</i>
+              <span>{this.state.pokemon.exp} exp</span>
+            </div>
+
+            <ul className="detailt-caracteristicas-hab">
+              <h4 className="title-hab">Abilities</h4>
+              {this.state.pokemon.abilities
+                .map(item => {
+                    return(
+                      <li key={item.name}>{item.name}</li>
+                    );
+                })
+              }
+            </ul>
+          </div>
+
+          <a className="previus" href="/">Regresar al listado</a>
+
+        </div>
+
+
+      </section>
     );
   }
 }

@@ -9,10 +9,15 @@ const api = {
       const data = await response.json();
       return data;
     },
-    async SinglePokemons(id = 1) {
+    async SinglePokemons(id) {
      const response = await fetch(`${BaseURL}/pokemon/${id}`);
      const data = await response.json();
      return data;
+    },
+    async PokemonsDescription() {
+      const response = await fetch(`${BaseURL}/description/3`);
+      const data = await response.json();
+      return data;
     },
   },
 }

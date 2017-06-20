@@ -23,7 +23,7 @@ class Home extends Component {
     this.initialFetch();
   }
 
-  /* función de petición a la API */
+  /* función de petición a la API  para obtener todos los pokemones*/
   async initialFetch() {
     const pokemons = await api.pokemons.ListPokemons();
     this.setState({
