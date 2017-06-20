@@ -4,9 +4,11 @@ import './Header.css';
 
 function Header() {
   return(
-    <header className="header">
-      <h1>Poke Api Test</h1>
-    </header>
+    <a href="/">
+      <header className="header">
+        <h1>Poke Api Test</h1>
+      </header>
+    </a>
   );
 }
 

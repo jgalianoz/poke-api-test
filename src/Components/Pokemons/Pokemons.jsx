@@ -17,6 +17,7 @@ function Pokemon(props) {
         <div className="Pokemon-info">
           <h3>{ props.name }</h3>
           <time>{ created }</time>
+          <p>{props.description.description}</p>
         </div>
       </div>
     </Link>

@@ -7,13 +7,13 @@
   text-align: center;
   display: inline-block;
   width: 180px;
-  height: 180px;
+  height: auto;
   padding: .5em;
   margin: 0 20px 20px;
   background: #263238;
   cursor: pointer;
-  border-radius: 50%;
   border: 2px solid #EF5350;
+  overflow: hidden;
 }
 
 .Pokemon:nth-child(3n) {
