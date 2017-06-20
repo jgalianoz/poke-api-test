@@ -9,7 +9,7 @@ import Header from '../../Components/Shared/Header/Header';
 import Home from './Home/Home';
 import PokeDetail from './Detail/Detail';
 
-function Page() {
+function Page() { //Definimos las rutas de la app
   return(
     <section>
       <Header />

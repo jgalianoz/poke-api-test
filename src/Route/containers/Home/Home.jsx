@@ -49,7 +49,7 @@ class Home extends Component {
 
   render() {
 
-    if ( this.state.loading ) return <Loading />
+    if ( this.state.loading ) return <Loading /> //Si no ha llegado la data, cargando ....
 
     const limit = 30;
     const secundary = this.state.page * limit;

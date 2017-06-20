@@ -33,13 +33,12 @@ class Detail extends Component {
       pokemon,
       description,
       loading: false,
-    })
-    console.log(this.state.pokemon);
+    }) //Actualizamos el estado
   }
 
   render(){
 
-    if ( this.state.loading ) return <Loading />
+    if ( this.state.loading ) return <Loading /> //Si no ha llegado la data cargando...
 
     return(
       <section className="container-detail">
