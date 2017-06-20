@@ -14,7 +14,6 @@ class Home extends Component {
     //Definimos el estado inicial del componente
     this.state = {
       pokemons: [],
-      description: '',
       page: 1,
       loading: true,
     };
@@ -28,18 +27,12 @@ class Home extends Component {
   /* función de petición a la API  para obtener todos los pokemones*/
   async initialFetch() {
 
-    const [
-      pokemons,
-      description,
-    ] = await Promise.all([
-      api.pokemons.ListPokemons(),
-      api.pokemons.PokemonsDescription(this.props.match.params.id),
-    ])
+    const pokemons = await api.pokemons.ListPokemons();
     this.setState({
       pokemons,
-      description,
       loading: false,
     })
+
   }
 
   /* Función para cambiar el estado para el paginado*/
@@ -62,7 +55,7 @@ class Home extends Component {
         {pokemons
           .map((item, index) => {
             return(
-              <Pokemon key={index} {...item} description={this.state.description}/>
+              <Pokemon key={index} {...item} />
             );
           })
         }

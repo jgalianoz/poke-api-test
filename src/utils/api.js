@@ -14,8 +14,8 @@ const api = {
      const data = await response.json();
      return data;
     },
-    async PokemonsDescription() {
-      const response = await fetch(`${BaseURL}/description/3`);
+    async PokemonsDescription(id) {
+      const response = await fetch(`${BaseURL}/description/${id}`);
       const data = await response.json();
       return data;
     },

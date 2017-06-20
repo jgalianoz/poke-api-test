@@ -34,6 +34,8 @@ class Detail extends Component {
       description,
       loading: false,
     }) //Actualizamos el estado
+
+    console.log(this.state.description);
   }
 
   render(){
