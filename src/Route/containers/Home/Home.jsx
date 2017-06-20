@@ -5,6 +5,7 @@ import Pagination from 'react-js-pagination';
 import api from '../../../utils/api.js';
 
 import Pokemon from '../../../Components/Pokemons/Pokemons';
+import Loading from '../../../Components/Shared/Loading/Loading';
 
 class Home extends Component {
 
@@ -48,11 +49,7 @@ class Home extends Component {
 
   render() {
 
-    if ( this.state.loading ) {
-      return(
-        <p>Cargando...</p>
-      );
-    }
+    if ( this.state.loading ) return <Loading />
 
     const limit = 30;
     const secundary = this.state.page * limit;

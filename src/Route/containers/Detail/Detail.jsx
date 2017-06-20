@@ -4,6 +4,8 @@ import './Detail.css';
 
 import api from '../../../utils/api.js';
 
+import Loading from './../../../Components/Shared/Loading/Loading';
+
 class Detail extends Component {
 
   constructor() {
@@ -37,7 +39,7 @@ class Detail extends Component {
 
   render(){
 
-    if ( this.state.loading ) return <p>Cargando....</p>
+    if ( this.state.loading ) return <Loading />
 
     return(
       <section className="container-detail">
