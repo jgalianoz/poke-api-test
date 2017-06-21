@@ -32,12 +32,13 @@ class Pokemon extends Component {
   render() {
     const date = new Date(`${this.props.created}`);
     const created  = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+    const url = `http://veekun.com/dex/media/pokemon/main-sprites/x-y/${this.props.national_id}.png`;
 
     return(
       <Link to={`/pokemon/${this.props.national_id}`}>
         <div className="Pokemon">
           <figure className="Pokemon-avatar">
-            <img src="images/Pokebola.png" width="50" height="50" alt={this.props.name} />
+            <img src={url} width="70" height="70" alt={this.props.name} />
           </figure>
           <div className="Pokemon-info">
             <h3>{ this.props.name }</h3>

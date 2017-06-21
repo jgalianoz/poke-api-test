@@ -42,12 +42,14 @@ class Detail extends Component {
 
     if ( this.state.loading ) return <Loading /> //Si no ha llegado la data cargando...
 
+    const url = `http://veekun.com/dex/media/pokemon/main-sprites/x-y/${this.state.pokemon.national_id}.png`;
+
     return(
       <section className="container-detail">
         <h2>Detail / {this.state.pokemon.name}</h2>
 
         <div className="container-detail-datos">
-          <img src="/images/pokemon.png" width="200" alt="pokemon" />
+          <img src={url} width="100" alt="pokemon" />
           <h3 className="detail-title">{ this.state.pokemon.name }</h3>
           <p>{this.state.description.description}</p>
 
