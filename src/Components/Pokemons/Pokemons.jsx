@@ -25,8 +25,6 @@ class Pokemon extends Component {
     this.setState({
       description,
     })
-
-    console.log(this.state.description);
   }
 
   render() {
